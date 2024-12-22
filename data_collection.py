@@ -1,5 +1,6 @@
 import cv2 
 from cvzone.HandTrackingModule import HandDetector
+from cvzone.ClassificationModule import Classifier
 import numpy as np
 import math
 import time
@@ -8,16 +9,20 @@ import os
 cap = cv2.VideoCapture(0)
 detector = HandDetector(maxHands=1)
 
+
+
 offset = 20
 imgSize = 300
 
 # Folder data utama
-base_folder = "data"
+base_folder = "data-v2"
 if not os.path.exists(base_folder):
     os.makedirs(base_folder)
 
+
+
 # Huruf awal untuk folder
-current_char = 'A'
+current_char = 'J'
 folder = os.path.join(base_folder, current_char)
 os.makedirs(folder, exist_ok=True)
 counter = 0
